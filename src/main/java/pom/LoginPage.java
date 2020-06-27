@@ -1,5 +1,7 @@
 package pom;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +13,9 @@ public class LoginPage extends BasePage {
 
     @FindBy(css = "input[name='userName']")
     private WebElement userName;
+
+   	By uername = By.cssSelector("input[name='userName']");
+
 
     @FindBy(css = "a[href='mercurysignon.php']")
     private WebElement signOnButton;
@@ -50,4 +55,14 @@ public class LoginPage extends BasePage {
         super.load();
         waitUntilPageLoads(getDriver(), 10);
     }
+
+   public boolean isPasswordEnabled(){
+        try {
+            password.isDisplayed();
+            return true;
+        }
+        catch (NoSuchElementException exception){
+            return false;
+        }
+   }
 }

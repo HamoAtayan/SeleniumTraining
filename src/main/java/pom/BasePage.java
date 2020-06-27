@@ -10,9 +10,9 @@ import org.openqa.selenium.support.ui.LoadableComponent;
  * Created by Hmayak Atayan on  13, Jun, 2020
  */
 public class BasePage extends LoadableComponent<BasePage> implements WaitHelpers, ComponentHelper {
-    private WebDriver driver;
-    private String serverUrl;
-    private String pagePath;
+    private final WebDriver driver;
+    private final String serverUrl;
+    private final String pagePath;
 
     public BasePage(WebDriver driver, String serverUrl, String pagePath) {
         this.driver = driver;

@@ -17,14 +17,15 @@ public class CommonHelpers {
 
     public static void main(String[] args) {
 //        System.out.println(getCurrentDate("dd/MM/YY"));
-        System.out.println(getRandomString(TEXT, 10));
+        System.out.println(getRandomString( 10));
     }
 
-    public static String getRandomString(String charactersList, int length) {
-        int size = charactersList.length();
+    public static String getRandomString( int length) {
+        String TEXT = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int size = TEXT.length();
         StringBuilder stringBuilder = new StringBuilder();
         while (length-- != 0) {
-            stringBuilder.append(charactersList.charAt(new Random().nextInt(size)));
+            stringBuilder.append(TEXT.charAt(new Random().nextInt(size)));
         }
         return stringBuilder.toString();
     }
